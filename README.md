@@ -1,7 +1,4 @@
 # Adhamya-
-// SPDX-License-Identifier: MIT
-
-pragma solidity 0.8.18;
 /*
        REQUIREMENTS
     1. Your contract will have public variables that store the details about your coin (Token Name, Token Abbrv., Total Supply)
@@ -15,26 +12,4 @@ pragma solidity 0.8.18;
     5. Lastly, your burn function should have conditionals to make sure the balance of "sender" is greater than or equal 
        to the amount that is supposed to be burned.
 */
-
-contract MyToken {
-
-    // public variables here
-string public tokenname="ADI";
-string public tokenabbrev="META";
-uint public totalsupply=0;
-    // mapping variable here  
-mapping(address => uint) public balances;
-    // mint function 
-function mint(address _address , uint _value) public{
-    totalsupply += _value;
-    balances[_address] += _value; 
-}
-
-    // burn function
-function burn(address _address , uint _value) public{
-    if(balances[_address] >= _value){
-    totalsupply -= _value; 
-    balances[_address] -= _value; 
-    }
-} 
 }
